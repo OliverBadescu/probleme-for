@@ -322,21 +322,51 @@ void sol11() {
 		cout << "x" << i << "=";
 		int x;
 		cin >> x;
+		if (ultimeleCifreEgale(x)) {
+			if (x < minim1) {
 
-		if (x < minim1 && ultimeleCifreEgale(x) == 1) {
-			minim1 = x;
-		}
-		if (minim1 != minim2 ) {
-			if (x < minim2 && ultimeleCifreEgale(x) == 1) {
+				minim2 = minim1;
+
+				minim1 = x;
+
+			}
+			else if (x < minim2 && x != minim1) {
 				minim2 = x;
 			}
+
 		}
+		
 	}
 
-	if (minim2 != INT_MAX) {
+	if (minim2 != INT_MAX && minim1!=minim2) {
 		cout << "Cele mai mici doua numere dintre cele introduse care au ultimele doua cifre egale sunt " << minim1 << " si " << minim2;
 	}
 	else {
 		cout << "Numere insuficiente";
 	}
+}
+
+
+//todo: Se consideră un şir format din n numere naturale nenule. Să se determine lungimea maximă a unei secvenţe strict crescătoare din şirul dat.
+//explicatie: În fișierul de intrare, secvențele de lungime maximă (k=3) sunt: 10 31 41 și 6 7 10.
+
+void sol12() {
+
+	int n = 0;
+	cout << "n= ";
+	cin >> n;
+	int cifAnterioara = 0, ct = 0;
+
+	for (int i = 1; i <= n; i++) {
+		cout << "x" << i << "=";
+		int x;
+		cin >> x;
+
+		cifAnterioara = x;
+
+		if (cifAnterioara < x) {
+			ct++;
+		}
+	}
+	cout << "Lungimea maxima a unei secvente strict crescatoare din sirul dat este de " << ct <<" numere";
 }
