@@ -355,7 +355,7 @@ void sol17() {
 }
 
 
-// 30) todo: Se dau n numere întregi. Calculaţi cel mai mic dintre cele n numere date.
+// 30) todo: Se dau n numere întregi. Calculaţi cel mai mic dintre cele n numere date. 
 
 void sol18() {
 
